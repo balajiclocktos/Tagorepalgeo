@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "673184145048",
+    "firebase_url": "https://palgeo.firebaseio.com",
+    "project_id": "palgeo",
+    "storage_bucket": "palgeo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673184145048:android:7fd61069f96af9df51faed",
+        "android_client_info": {
+          "package_name": "com.tagorecollege"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673184145048-esfop0g59i1lk2unijkmp6t3qddvmiu3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tagorecollege",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "673184145048-f9hhnvcf4oto2i57tep98lg297vhvtiv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tagorecollege",
+            "certificate_hash": "8f5dae571500d083f3ea6e366a511920944aa8d1"
+          }
+        },
+        {
+          "client_id": "673184145048-879ne18t4h4cmlss0e7k0haafbtn4fks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9cG0bT43z4-lSf5h0e0HlbKpknuXbVtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673184145048-879ne18t4h4cmlss0e7k0haafbtn4fks.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "673184145048-j6lktbtlf6f92l89kk8qckkk9i1g85gq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tagorecollege"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

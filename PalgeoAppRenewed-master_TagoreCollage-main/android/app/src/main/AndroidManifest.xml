@@ -1,0 +1,96 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.tagorecollege">
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.BLUETOOTH" />
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+<!-- <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> -->
+<permission
+    android:name="${applicationId}.permission.C2D_MESSAGE"
+    android:protectionLevel="signature" />
+<uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
+<uses-permission android:name="android.permission.VIBRATE" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <application
+      android:usesCleartextTraffic="true"
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:allowBackup="true"
+      android:theme="@style/AppTheme">
+      
+      <provider
+		android:name="com.vinzscam.reactnativefileviewer.FileProvider"
+		android:authorities="${applicationId}.provider"
+		android:exported="false"
+		android:grantUriPermissions="true">
+		<meta-data
+			android:name="android.support.FILE_PROVIDER_PATHS"
+			android:resource="@xml/file_viewer_provider_paths"
+		/>
+	</provider>
+  
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:launchMode="singleTop"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:exported="true"
+        android:windowSoftInputMode="adjustResize">
+      </activity>
+      <activity
+          android:name=".SplashActivity"
+          android:theme="@style/SplashTheme"
+          android:exported="true"
+          android:label="@string/app_name">
+          <intent-filter>
+              <action android:name="android.intent.action.MAIN" />
+              <category android:name="android.intent.category.LAUNCHER" />
+               <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+          </intent-filter>
+        </activity>
+      <meta-data
+          android:name="com.google.android.geo.API_KEY"
+          android:value="AIzaSyBr_iaHWuxvW-43wCNJV2kFc2RS5PHi6wI"/>
+          <uses-library
+             android:name="org.apache.http.legacy"
+             android:required="false" />
+          <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+      <meta-data
+      android:name="com.supersami.foregroundservice.notification_channel_name"
+      android:value="Sticky Title"
+      />
+      <meta-data
+      android:name="com.supersami.foregroundservice.notification_channel_description"
+      android:value="Sticky Description."
+      />
+      <meta-data
+      android:name="com.supersami.foregroundservice.notification_color"
+      android:resource="@color/blue"
+      />
+      <service android:name="com.supersami.foregroundservice.ForegroundService" />
+      <service android:name="com.supersami.foregroundservice.ForegroundServiceTask" />
+      <!-- <queries>
+      <package android:name="com.google.android.apps.fitness" />
+      </queries> -->
+      <meta-data android:name="com.transistorsoft.locationmanager.license" android:value="3507026c519c8551c60e2cd3071f63fd102bb0fc624c425a11704e875975a827" />
+      <service android:name="com.transistorsoft.locationmanager.service.TrackingService" android:foregroundServiceType="location" />
+      <service android:name="com.transistorsoft.locationmanager.service.LocationRequestService" android:foregroundServiceType="location" />
+    </application>
+    <queries>
+   <intent>
+     <action android:name="android.intent.action.VIEW" />
+     <!-- If you don't know the MIME type in advance, set "mimeType" to "*/*". -->
+     <data android:mimeType="application/pdf" />
+   </intent>
+ </queries>
+</manifest>

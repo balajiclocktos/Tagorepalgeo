@@ -1,0 +1,10 @@
+<resources>
+    <color name="white">#FFF</color>
+     <color name="splashscreen_bg">#f7f7f7</color>
+    <color name="app_bg">#424242</color>
+    <item  name="blue"  type="color">#00C4D1
+    </item>
+    <integer-array  name="androidcolors">
+    <item>@color/blue</item>
+    </integer-array>
+</resources>

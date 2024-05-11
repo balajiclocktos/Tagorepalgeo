@@ -1,0 +1,1070 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E356F31AD99517003FC87E /* palgeoappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* palgeoappTests.m */; };
+		03382838F75C4830A4960130 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14066266E60B473FA4F92D47 /* Poppins-SemiBold.ttf */; };
+		0ADF3D28415E49628F779FC3 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45CDF92AC5E448D1A8FE34CA /* Poppins-MediumItalic.ttf */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		14D019C6AA744AA0B75EBA64 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92B5AAD5CD6A4844AC3185A5 /* Roboto-Medium.ttf */; };
+		17D606AA67154F0C9F23C3DF /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 778A1E3B468B47269D232E05 /* Roboto-Bold.ttf */; };
+		18901882273215FE00123290 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18901881273215FE00123290 /* NotificationService.swift */; };
+		18901887273215FE00123290 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1890187F273215FE00123290 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1890188E2732183F00123290 /* Fix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890188D2732183F00123290 /* Fix.swift */; };
+		189F325327D19B2300FBD490 /* RNBackgroundFetch+AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189F325227D19B2300FBD490 /* RNBackgroundFetch+AppDelegate.m */; };
+		245E730ECC8D4986B74298C2 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE0C4962C9AD4F10AF477557 /* Poppins-BlackItalic.ttf */; };
+		2BEDA3A782C64824A0937FA0 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6957C23D445A44F0A820CFB3 /* Poppins-ThinItalic.ttf */; };
+		35E9DD0931B04F8EB259B645 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99067EDCE0894FC0901CC767 /* Roboto-LightItalic.ttf */; };
+		4183EA9C3B4646ED8F1074C8 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D0036BA6BF5459CBC8AD65F /* Poppins-ExtraBoldItalic.ttf */; };
+		480D563D1B3ADFB8F303387D /* libPods-palgeoapp-palgeoappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A8E6214C6B1B0E04B99DDF /* libPods-palgeoapp-palgeoappTests.a */; };
+		4B9B53B4558B457E94809EA6 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3962D854A0614BC080293AA4 /* Roboto-Thin.ttf */; };
+		503692DD86A9479FAF824807 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A75254D08911424FB2379928 /* Roboto-ThinItalic.ttf */; };
+		55A91D415E904080BFBD28FE /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBDEB0311F86477082000863 /* Poppins-ExtraLight.ttf */; };
+		6875DEB11B74418EA8542339 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA9A55BE4CC49E8A56AA1B9 /* Poppins-Light.ttf */; };
+		689164C83DAE460AB680BDAF /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF49955222CE4B0AA9F42628 /* Poppins-Black.ttf */; };
+		6A9E76407CD144FFAAD0A592 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88251CF5DF344865BFF89C0A /* Poppins-Thin.ttf */; };
+		6BA96C704014E8921F2B81E7 /* libPods-palgeoapp-OneSignalNotificationServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C349A13B153268C112DF710 /* libPods-palgeoapp-OneSignalNotificationServiceExtension.a */; };
+		72FE2258D4DC4160B6B82157 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB9678E4275E4A51BD3BC108 /* Poppins-SemiBoldItalic.ttf */; };
+		7398E7BFA36E43B38715B824 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCB89AFD85094A4F84029F1F /* Poppins-Regular.ttf */; };
+		7A785856EB574C47ABA2C0EA /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9856D156B4FE4DF7B74CD834 /* Poppins-BoldItalic.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		881B6E21F9D1404FAB0C4E6E /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70695A72A067476782887386 /* Roboto-Light.ttf */; };
+		95538DC6604F492A94645512 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC54FDD47574834B217A5C8 /* Roboto-BlackItalic.ttf */; };
+		957FE33528CC43A8B81255DD /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5821767BDE4C0C92E1AF8E /* Poppins-Italic.ttf */; };
+		B57871D849EF400FB878757B /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6286F9BC984542189020A38A /* Poppins-ExtraBold.ttf */; };
+		BBA3F653E2D04914AF5ABF42 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F6C9AC9F7D6489C91E53793 /* Roboto-Black.ttf */; };
+		C0ADF1C3B24B4925906548F9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E299D0357F974C199C3525A7 /* Roboto-Regular.ttf */; };
+		C2A19F53418449CE91EC8AC9 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B78846705E9A4B24835072D2 /* Roboto-MediumItalic.ttf */; };
+		CE76CF003C164377B6012704 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A977E0B1FEC48D38DEAFDB7 /* Poppins-ExtraLightItalic.ttf */; };
+		D97F8E4B7806431687290E39 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A5472E753F94114B08752D4 /* Roboto-Italic.ttf */; };
+		DE3C384709DF42FFBE9F5953 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72AC8C9C4F7D4214A3F0BA09 /* Poppins-LightItalic.ttf */; };
+		E0166F8CAF470FA66190BD42 /* libPods-palgeoapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBF3058AE9117EDAD447DA6 /* libPods-palgeoapp.a */; };
+		E5847CB9C385489083254679 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8FA84AAAB9E4A1FB542798C /* Poppins-Medium.ttf */; };
+		F8FE363B0FEE4A5683F16361 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFA538802A6A4641B394271D /* Poppins-Bold.ttf */; };
+		FCF17EF964264DA2B62B0395 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B9C77E3522DE4219952BBD22 /* Roboto-BoldItalic.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = "palgeoapp";
+		};
+		18901884273215FE00123290 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1890187E273215FE00123290;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		18901886273215FE00123290 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				18901887273215FE00123290 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00E356EE1AD99517003FC87E /* palgeoappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "palgeoappTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* palgeoappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "palgeoappTests.m"; sourceTree = "<group>"; };
+		0A5472E753F94114B08752D4 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Italic.ttf"; path = "../src/assets/fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		0AC54FDD47574834B217A5C8 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BlackItalic.ttf"; path = "../src/assets/fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* palgeoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "palgeoapp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "palgeoapp/AppDelegate.h"; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = palgeoapp/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "palgeoapp/Images.xcassets"; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "palgeoapp/Info.plist"; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "palgeoapp/main.m"; sourceTree = "<group>"; };
+		14066266E60B473FA4F92D47 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		17A8E6214C6B1B0E04B99DDF /* libPods-palgeoapp-palgeoappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-palgeoapp-palgeoappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1890187A2732152A00123290 /* palgeoapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = palgeoapp.entitlements; path = palgeoapp/palgeoapp.entitlements; sourceTree = "<group>"; };
+		1890187F273215FE00123290 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		18901881273215FE00123290 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		18901883273215FE00123290 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1890188B2732165700123290 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
+		1890188C2732183F00123290 /* palgeoapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "palgeoapp-Bridging-Header.h"; sourceTree = "<group>"; };
+		1890188D2732183F00123290 /* Fix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fix.swift; sourceTree = "<group>"; };
+		189F325227D19B2300FBD490 /* RNBackgroundFetch+AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RNBackgroundFetch+AppDelegate.m"; path = "../node_modules/react-native-background-fetch/ios/RNBackgroundFetch/RNBackgroundFetch+AppDelegate.m"; sourceTree = "<group>"; };
+		1B5821767BDE4C0C92E1AF8E /* Poppins-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Italic.ttf"; path = "../src/assets/fonts/Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		3962D854A0614BC080293AA4 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../src/assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		40603B311DBF59229F825E0C /* Pods-palgeoapp-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-palgeoapp-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-palgeoapp-OneSignalNotificationServiceExtension/Pods-palgeoapp-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		45CDF92AC5E448D1A8FE34CA /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-MediumItalic.ttf"; path = "../src/assets/fonts/Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		5DE5E5375FEAD69A496BE8CC /* Pods-palgeoapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-palgeoapp.debug.xcconfig"; path = "Target Support Files/Pods-palgeoapp/Pods-palgeoapp.debug.xcconfig"; sourceTree = "<group>"; };
+		6286F9BC984542189020A38A /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBold.ttf"; path = "../src/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		6957C23D445A44F0A820CFB3 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ThinItalic.ttf"; path = "../src/assets/fonts/Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		6F6C9AC9F7D6489C91E53793 /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../src/assets/fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
+		70695A72A067476782887386 /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../src/assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
+		72AC8C9C4F7D4214A3F0BA09 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-LightItalic.ttf"; path = "../src/assets/fonts/Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		778A1E3B468B47269D232E05 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		7D0036BA6BF5459CBC8AD65F /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "palgeoapp/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		88251CF5DF344865BFF89C0A /* Poppins-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Thin.ttf"; path = "../src/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		8C8A26F39BF9BF76C797510D /* Pods-palgeoapp-palgeoappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-palgeoapp-palgeoappTests.debug.xcconfig"; path = "Target Support Files/Pods-palgeoapp-palgeoappTests/Pods-palgeoapp-palgeoappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		92B5AAD5CD6A4844AC3185A5 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../src/assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		9856D156B4FE4DF7B74CD834 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BoldItalic.ttf"; path = "../src/assets/fonts/Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		99067EDCE0894FC0901CC767 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../src/assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		9A977E0B1FEC48D38DEAFDB7 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLightItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		9BA9A55BE4CC49E8A56AA1B9 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
+		9C349A13B153268C112DF710 /* libPods-palgeoapp-OneSignalNotificationServiceExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-palgeoapp-OneSignalNotificationServiceExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A75254D08911424FB2379928 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ThinItalic.ttf"; path = "../src/assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		A86A32A69A1FC5F372329473 /* Pods-palgeoapp-palgeoappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-palgeoapp-palgeoappTests.release.xcconfig"; path = "Target Support Files/Pods-palgeoapp-palgeoappTests/Pods-palgeoapp-palgeoappTests.release.xcconfig"; sourceTree = "<group>"; };
+		AA70D5D6949600960C50D7E3 /* Pods-palgeoapp-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-palgeoapp-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-palgeoapp-OneSignalNotificationServiceExtension/Pods-palgeoapp-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		AB9678E4275E4A51BD3BC108 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		AE0C4962C9AD4F10AF477557 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BlackItalic.ttf"; path = "../src/assets/fonts/Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		B78846705E9A4B24835072D2 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-MediumItalic.ttf"; path = "../src/assets/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B9C77E3522DE4219952BBD22 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BoldItalic.ttf"; path = "../src/assets/fonts/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		BFBF3058AE9117EDAD447DA6 /* libPods-palgeoapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-palgeoapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF49955222CE4B0AA9F42628 /* Poppins-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Black.ttf"; path = "../src/assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; };
+		E299D0357F974C199C3525A7 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		E8FA84AAAB9E4A1FB542798C /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		EBDEB0311F86477082000863 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLight.ttf"; path = "../src/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F1961622325D26FEA9BB7B6D /* Pods-palgeoapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-palgeoapp.release.xcconfig"; path = "Target Support Files/Pods-palgeoapp/Pods-palgeoapp.release.xcconfig"; sourceTree = "<group>"; };
+		FCB89AFD85094A4F84029F1F /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		FFA538802A6A4641B394271D /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				480D563D1B3ADFB8F303387D /* libPods-palgeoapp-palgeoappTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0166F8CAF470FA66190BD42 /* libPods-palgeoapp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1890187C273215FE00123290 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BA96C704014E8921F2B81E7 /* libPods-palgeoapp-OneSignalNotificationServiceExtension.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* palgeoappTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* palgeoappTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = "palgeoappTests";
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* palgeoapp */ = {
+			isa = PBXGroup;
+			children = (
+				1890187A2732152A00123290 /* palgeoapp.entitlements */,
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				13B07FB71A68108700A75B9A /* main.m */,
+				1890188D2732183F00123290 /* Fix.swift */,
+				1890188C2732183F00123290 /* palgeoapp-Bridging-Header.h */,
+			);
+			name = "palgeoapp";
+			sourceTree = "<group>";
+		};
+		18901880273215FE00123290 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1890188B2732165700123290 /* OneSignalNotificationServiceExtension.entitlements */,
+				18901881273215FE00123290 /* NotificationService.swift */,
+				18901883273215FE00123290 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				BFBF3058AE9117EDAD447DA6 /* libPods-palgeoapp.a */,
+				17A8E6214C6B1B0E04B99DDF /* libPods-palgeoapp-palgeoappTests.a */,
+				9C349A13B153268C112DF710 /* libPods-palgeoapp-OneSignalNotificationServiceExtension.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D35759CB13447EABD2D04CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DF49955222CE4B0AA9F42628 /* Poppins-Black.ttf */,
+				AE0C4962C9AD4F10AF477557 /* Poppins-BlackItalic.ttf */,
+				FFA538802A6A4641B394271D /* Poppins-Bold.ttf */,
+				9856D156B4FE4DF7B74CD834 /* Poppins-BoldItalic.ttf */,
+				6286F9BC984542189020A38A /* Poppins-ExtraBold.ttf */,
+				7D0036BA6BF5459CBC8AD65F /* Poppins-ExtraBoldItalic.ttf */,
+				EBDEB0311F86477082000863 /* Poppins-ExtraLight.ttf */,
+				9A977E0B1FEC48D38DEAFDB7 /* Poppins-ExtraLightItalic.ttf */,
+				1B5821767BDE4C0C92E1AF8E /* Poppins-Italic.ttf */,
+				9BA9A55BE4CC49E8A56AA1B9 /* Poppins-Light.ttf */,
+				72AC8C9C4F7D4214A3F0BA09 /* Poppins-LightItalic.ttf */,
+				E8FA84AAAB9E4A1FB542798C /* Poppins-Medium.ttf */,
+				45CDF92AC5E448D1A8FE34CA /* Poppins-MediumItalic.ttf */,
+				FCB89AFD85094A4F84029F1F /* Poppins-Regular.ttf */,
+				14066266E60B473FA4F92D47 /* Poppins-SemiBold.ttf */,
+				AB9678E4275E4A51BD3BC108 /* Poppins-SemiBoldItalic.ttf */,
+				88251CF5DF344865BFF89C0A /* Poppins-Thin.ttf */,
+				6957C23D445A44F0A820CFB3 /* Poppins-ThinItalic.ttf */,
+				6F6C9AC9F7D6489C91E53793 /* Roboto-Black.ttf */,
+				0AC54FDD47574834B217A5C8 /* Roboto-BlackItalic.ttf */,
+				778A1E3B468B47269D232E05 /* Roboto-Bold.ttf */,
+				B9C77E3522DE4219952BBD22 /* Roboto-BoldItalic.ttf */,
+				0A5472E753F94114B08752D4 /* Roboto-Italic.ttf */,
+				70695A72A067476782887386 /* Roboto-Light.ttf */,
+				99067EDCE0894FC0901CC767 /* Roboto-LightItalic.ttf */,
+				92B5AAD5CD6A4844AC3185A5 /* Roboto-Medium.ttf */,
+				B78846705E9A4B24835072D2 /* Roboto-MediumItalic.ttf */,
+				E299D0357F974C199C3525A7 /* Roboto-Regular.ttf */,
+				3962D854A0614BC080293AA4 /* Roboto-Thin.ttf */,
+				A75254D08911424FB2379928 /* Roboto-ThinItalic.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				189F325227D19B2300FBD490 /* RNBackgroundFetch+AppDelegate.m */,
+				13B07FAE1A68108700A75B9A /* palgeoapp */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* palgeoappTests */,
+				18901880273215FE00123290 /* OneSignalNotificationServiceExtension */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				E9EE5BBED95D9ACF8B4306D2 /* Pods */,
+				3D35759CB13447EABD2D04CE /* Resources */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* palgeoapp.app */,
+				00E356EE1AD99517003FC87E /* palgeoappTests.xctest */,
+				1890187F273215FE00123290 /* OneSignalNotificationServiceExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9EE5BBED95D9ACF8B4306D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DE5E5375FEAD69A496BE8CC /* Pods-palgeoapp.debug.xcconfig */,
+				F1961622325D26FEA9BB7B6D /* Pods-palgeoapp.release.xcconfig */,
+				8C8A26F39BF9BF76C797510D /* Pods-palgeoapp-palgeoappTests.debug.xcconfig */,
+				A86A32A69A1FC5F372329473 /* Pods-palgeoapp-palgeoappTests.release.xcconfig */,
+				40603B311DBF59229F825E0C /* Pods-palgeoapp-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				AA70D5D6949600960C50D7E3 /* Pods-palgeoapp-OneSignalNotificationServiceExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* palgeoappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "palgeoappTests" */;
+			buildPhases = (
+				5351E16AC174BB53F8A150B2 /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+				6663CBE540D27A2AAE9F45C8 /* [CP] Embed Pods Frameworks */,
+				6831877D2C6F0BBEEA874179 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = "palgeoappTests";
+			productname = "palgeoappTests";
+			productReference = 00E356EE1AD99517003FC87E /* palgeoappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* palgeoapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "palgeoapp" */;
+			buildPhases = (
+				B350933FDBFFBE0E5327D2F0 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				87F31D5EB2BC02D89E1C6424 /* [CP] Embed Pods Frameworks */,
+				5BB8BFA98C755721AE58B271 /* [CP] Copy Pods Resources */,
+				18901886273215FE00123290 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18901885273215FE00123290 /* PBXTargetDependency */,
+			);
+			name = "palgeoapp";
+			productName = "palgeoapp";
+			productReference = 13B07F961A680F5B00A75B9A /* palgeoapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1890187E273215FE00123290 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18901888273215FE00123290 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				E4D786D9A8BC7B34C52470E5 /* [CP] Check Pods Manifest.lock */,
+				1890187B273215FE00123290 /* Sources */,
+				1890187C273215FE00123290 /* Frameworks */,
+				1890187D273215FE00123290 /* Resources */,
+				B20C82F503EB5CBE4B286BF3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 1890187F273215FE00123290 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1310;
+					};
+					1890187E273215FE00123290 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "palgeoapp" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* palgeoapp */,
+				00E356ED1AD99517003FC87E /* palgeoappTests */,
+				1890187E273215FE00123290 /* OneSignalNotificationServiceExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				689164C83DAE460AB680BDAF /* Poppins-Black.ttf in Resources */,
+				245E730ECC8D4986B74298C2 /* Poppins-BlackItalic.ttf in Resources */,
+				F8FE363B0FEE4A5683F16361 /* Poppins-Bold.ttf in Resources */,
+				7A785856EB574C47ABA2C0EA /* Poppins-BoldItalic.ttf in Resources */,
+				B57871D849EF400FB878757B /* Poppins-ExtraBold.ttf in Resources */,
+				4183EA9C3B4646ED8F1074C8 /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				55A91D415E904080BFBD28FE /* Poppins-ExtraLight.ttf in Resources */,
+				CE76CF003C164377B6012704 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				957FE33528CC43A8B81255DD /* Poppins-Italic.ttf in Resources */,
+				6875DEB11B74418EA8542339 /* Poppins-Light.ttf in Resources */,
+				DE3C384709DF42FFBE9F5953 /* Poppins-LightItalic.ttf in Resources */,
+				E5847CB9C385489083254679 /* Poppins-Medium.ttf in Resources */,
+				0ADF3D28415E49628F779FC3 /* Poppins-MediumItalic.ttf in Resources */,
+				7398E7BFA36E43B38715B824 /* Poppins-Regular.ttf in Resources */,
+				03382838F75C4830A4960130 /* Poppins-SemiBold.ttf in Resources */,
+				72FE2258D4DC4160B6B82157 /* Poppins-SemiBoldItalic.ttf in Resources */,
+				6A9E76407CD144FFAAD0A592 /* Poppins-Thin.ttf in Resources */,
+				2BEDA3A782C64824A0937FA0 /* Poppins-ThinItalic.ttf in Resources */,
+				BBA3F653E2D04914AF5ABF42 /* Roboto-Black.ttf in Resources */,
+				95538DC6604F492A94645512 /* Roboto-BlackItalic.ttf in Resources */,
+				17D606AA67154F0C9F23C3DF /* Roboto-Bold.ttf in Resources */,
+				FCF17EF964264DA2B62B0395 /* Roboto-BoldItalic.ttf in Resources */,
+				D97F8E4B7806431687290E39 /* Roboto-Italic.ttf in Resources */,
+				881B6E21F9D1404FAB0C4E6E /* Roboto-Light.ttf in Resources */,
+				35E9DD0931B04F8EB259B645 /* Roboto-LightItalic.ttf in Resources */,
+				14D019C6AA744AA0B75EBA64 /* Roboto-Medium.ttf in Resources */,
+				C2A19F53418449CE91EC8AC9 /* Roboto-MediumItalic.ttf in Resources */,
+				C0ADF1C3B24B4925906548F9 /* Roboto-Regular.ttf in Resources */,
+				4B9B53B4558B457E94809EA6 /* Roboto-Thin.ttf in Resources */,
+				503692DD86A9479FAF824807 /* Roboto-ThinItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1890187D273215FE00123290 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		5351E16AC174BB53F8A150B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-palgeoapp-palgeoappTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BB8BFA98C755721AE58B271 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-palgeoapp/Pods-palgeoapp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-palgeoapp/Pods-palgeoapp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-palgeoapp/Pods-palgeoapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6663CBE540D27A2AAE9F45C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-palgeoapp-palgeoappTests/Pods-palgeoapp-palgeoappTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-palgeoapp-palgeoappTests/Pods-palgeoapp-palgeoappTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-palgeoapp-palgeoappTests/Pods-palgeoapp-palgeoappTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6831877D2C6F0BBEEA874179 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-palgeoapp-palgeoappTests/Pods-palgeoapp-palgeoappTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-palgeoapp-palgeoappTests/Pods-palgeoapp-palgeoappTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-palgeoapp-palgeoappTests/Pods-palgeoapp-palgeoappTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87F31D5EB2BC02D89E1C6424 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-palgeoapp/Pods-palgeoapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-palgeoapp/Pods-palgeoapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-palgeoapp/Pods-palgeoapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B20C82F503EB5CBE4B286BF3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-palgeoapp-OneSignalNotificationServiceExtension/Pods-palgeoapp-OneSignalNotificationServiceExtension-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-palgeoapp-OneSignalNotificationServiceExtension/Pods-palgeoapp-OneSignalNotificationServiceExtension-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-palgeoapp-OneSignalNotificationServiceExtension/Pods-palgeoapp-OneSignalNotificationServiceExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B350933FDBFFBE0E5327D2F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-palgeoapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4D786D9A8BC7B34C52470E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-palgeoapp-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* palgeoappTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				1890188E2732183F00123290 /* Fix.swift in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				189F325327D19B2300FBD490 /* RNBackgroundFetch+AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1890187B273215FE00123290 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18901882273215FE00123290 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* palgeoapp */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		18901885273215FE00123290 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1890187E273215FE00123290 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 18901884273215FE00123290 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C8A26F39BF9BF76C797510D /* Pods-palgeoapp-palgeoappTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "palgeoappTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tagorecollege";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/palgeoapp.app/palgeoapp";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A86A32A69A1FC5F372329473 /* Pods-palgeoapp-palgeoappTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = "palgeoappTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tagorecollege";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/palgeoapp.app/palgeoapp";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DE5E5375FEAD69A496BE8CC /* Pods-palgeoapp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = palgeoapp/palgeoapp.entitlements;
+				CURRENT_PROJECT_VERSION = 29;
+				DEVELOPMENT_TEAM = HL7CZBGA9C;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "palgeoapp/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "palgeoapp";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.3;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tagorecollege";
+				PRODUCT_NAME = "palgeoapp";
+				SWIFT_OBJC_BRIDGING_HEADER = "palgeoapp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1961622325D26FEA9BB7B6D /* Pods-palgeoapp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = palgeoapp/palgeoapp.entitlements;
+				CURRENT_PROJECT_VERSION = 29;
+				DEVELOPMENT_TEAM = HL7CZBGA9C;
+				INFOPLIST_FILE = "palgeoapp/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "palgeoapp";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.3;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tagorecollege";
+				PRODUCT_NAME = "palgeoapp";
+				SWIFT_OBJC_BRIDGING_HEADER = "palgeoapp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		18901889273215FE00123290 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40603B311DBF59229F825E0C /* Pods-palgeoapp-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 29;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = HL7CZBGA9C;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tagorecollege";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1890188A273215FE00123290 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA70D5D6949600960C50D7E3 /* Pods-palgeoapp-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 29;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = HL7CZBGA9C;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1.3;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tagorecollege";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "palgeoappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "palgeoapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18901888273215FE00123290 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18901889273215FE00123290 /* Debug */,
+				1890188A273215FE00123290 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "palgeoapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}
