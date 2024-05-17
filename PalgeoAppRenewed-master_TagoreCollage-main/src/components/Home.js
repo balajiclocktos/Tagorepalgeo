@@ -352,6 +352,7 @@ export default class Home extends Component {
       'current_travel_checkin',
     );
     const profile_pic = await asyncStorageDataFetch('profile_pic');
+    console.log('profilepicccccc', profile_pic);
     const isFaceRequired = await asyncStorageDataFetch('isFaceRequired');
     const qrCheckin = await asyncStorageDataFetch('qrCheckin');
     const qrCheckOut = await asyncStorageDataFetch('qrCheckout');

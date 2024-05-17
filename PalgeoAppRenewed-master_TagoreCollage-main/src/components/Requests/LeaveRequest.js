@@ -6,7 +6,7 @@ import {
   Image as Thumbnail,
   TextArea,
 } from 'native-base';
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   View,
   Text,
@@ -26,28 +26,28 @@ import {
 } from 'react-native-responsive-screen';
 import SubHeader from '../common/DrawerHeader';
 import CustomPicker from '../common/CustomPicker';
-import { CustomList } from '../common/CustomList';
-import { CustomButton } from '../common/CustomButton';
+import {CustomList} from '../common/CustomList';
+import {CustomButton} from '../common/CustomButton';
 import DatePicker from 'react-native-datepicker';
 import moment from 'moment';
-import { CustomList2 } from '../common/CustomList2';
-import { CustomTextArea } from '../common/CustomTextArea';
-import { ApprovalStages } from '../common/ApprovalStages';
-import { CustomTabs } from '../common/CustomTabs';
-import { CustomCalendar } from '../common/CustomCalendar';
+import {CustomList2} from '../common/CustomList2';
+import {CustomTextArea} from '../common/CustomTextArea';
+import {ApprovalStages} from '../common/ApprovalStages';
+import {CustomTabs} from '../common/CustomTabs';
+import {CustomCalendar} from '../common/CustomCalendar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import Const from '../common/Constants';
-import { ActivityIndicator } from 'react-native';
-import { Colors } from '../../utils/configs/Colors';
-import { CheckBox, Divider, Icon } from 'react-native-elements';
+import {ActivityIndicator} from 'react-native';
+import {Colors} from '../../utils/configs/Colors';
+import {CheckBox, Divider, Icon} from 'react-native-elements';
 import CustomLabel from '../common/CustomLabel';
 import CustomModal from '../common/CustomModal';
 import SuccessError from '../common/SuccessError';
 import CustomLoader from '../Task Allocation/CustomLoader';
 import CustomCard from '../common/CustomCard';
 import SearchBar from 'react-native-elements/dist/searchbar/SearchBar-ios';
-import { getAllReportees, noTokenAPi } from '../../utils/apis';
+import {getAllReportees, noTokenAPi} from '../../utils/apis';
 import CustomSelect from '../common/CustomSelect';
 import AlternateStaffComp from './AlternateStaffComp';
 //import ApprovalStages from '../common/ApprovalStages';
@@ -119,7 +119,7 @@ export default class LeaveRequest extends Component {
     try {
       const value = await AsyncStorage.getItem('org_id');
       if (value !== null) {
-        this.setState({ org_id: value });
+        this.setState({org_id: value});
       }
     } catch (error) {
       alert('Error retrieving data');
@@ -128,7 +128,7 @@ export default class LeaveRequest extends Component {
       const value = await AsyncStorage.getItem('bearer_token');
       if (value !== null) {
         //alert(value);
-        this.setState({ Token: value }, function () {
+        this.setState({Token: value}, function () {
           //this.GetLeaveTypes();
         });
       }
@@ -139,7 +139,7 @@ export default class LeaveRequest extends Component {
       const value = await AsyncStorage.getItem('institute_id');
       if (value !== null) {
         //console.log('institute id =', value);
-        this.setState({ institute_id: value }, function () {
+        this.setState({institute_id: value}, function () {
           this.getDepartments(value, this.state.Token);
         });
       }
@@ -151,8 +151,8 @@ export default class LeaveRequest extends Component {
       if (value !== null) {
         //console.log('StaffCode  =', value);
         //alert(value);
-        this.setState({ StaffCode: value, user_id: value }, function () {
-          this.setState({ LeaveId: '' }, () => {
+        this.setState({StaffCode: value, user_id: value}, function () {
+          this.setState({LeaveId: ''}, () => {
             //this.GetInstituteStaffLeavesNew();
             this.GetLeaveTypeSubCategoriesByInstituteId(
               this.state.SelectedLeaveId,
@@ -172,7 +172,7 @@ export default class LeaveRequest extends Component {
     const reportees = await getAllReportees();
     console.log('resportees', reportees);
     if (reportees?.length > 0) {
-      const allReportees = [{ staffCode, name: 'Self' }, ...reportees];
+      const allReportees = [{staffCode, name: 'Self'}, ...reportees];
       this.setState({
         showReporteesDropdown: true,
         reportees: allReportees,
@@ -207,9 +207,9 @@ export default class LeaveRequest extends Component {
             };
             temparr.push(obj);
           });
-          this.setState({ departments: temparr });
+          this.setState({departments: temparr});
         } else {
-          this.setState({ departments: [] });
+          this.setState({departments: []});
         }
       })
       .catch(error => {
@@ -217,7 +217,7 @@ export default class LeaveRequest extends Component {
       });
   };
   getAllStaff = async () => {
-    const { org_id, institute_id } = this.state;
+    const {org_id, institute_id} = this.state;
     const url = `api/Staff/staffwithId/all/${org_id}/${institute_id}`;
 
     try {
@@ -230,7 +230,7 @@ export default class LeaveRequest extends Component {
           department: e.department,
         };
       });
-      this.setState({ allStaffs: response }, () => {
+      this.setState({allStaffs: response}, () => {
         //console.log('allStaffs ==== ', this.state.allStaffs);
       });
     } catch (error) {
@@ -239,8 +239,8 @@ export default class LeaveRequest extends Component {
   };
 
   _onRefresh() {
-    this.setState({ refreshing: true });
-    this.setState({ LeaveId: '' }, () => {
+    this.setState({refreshing: true});
+    this.setState({LeaveId: ''}, () => {
       this.GetInstituteStaffLeavesNew();
     });
     //this.GetMasterLeaveApproverDetails(this.state.StaffCode);
@@ -248,7 +248,7 @@ export default class LeaveRequest extends Component {
   DateCheckerFunction() {
     if (this.state.FromDate > this.state.ToDate) {
       alert('Start Date cannot be greater than End date');
-      this.setState({ ToDate: this.state.FromDate }, () =>
+      this.setState({ToDate: this.state.FromDate}, () =>
         this.GetDetailedLeaves(),
       );
       return false;
@@ -291,19 +291,19 @@ export default class LeaveRequest extends Component {
         function () {
           response.data.length == 1
             ? this.setState(
-              {
-                LeaveId: this.state.SelectedLeaveIdArr[0].leaveId,
-                isAlternateStaff:
-                  this.state.SelectedLeaveIdArr[0].isAlternateStaff,
-                isAttachmentMandatory:
-                  this.state.SelectedLeaveIdArr[0].isAttachmentMandatory,
-              },
-              () => {
-                this.LeaveIdentifier(
-                  this.state.SelectedLeaveIdArr[0].leaveId,
-                );
-              },
-            )
+                {
+                  LeaveId: this.state.SelectedLeaveIdArr[0].leaveId,
+                  isAlternateStaff:
+                    this.state.SelectedLeaveIdArr[0].isAlternateStaff,
+                  isAttachmentMandatory:
+                    this.state.SelectedLeaveIdArr[0].isAttachmentMandatory,
+                },
+                () => {
+                  this.LeaveIdentifier(
+                    this.state.SelectedLeaveIdArr[0].leaveId,
+                  );
+                },
+              )
             : null;
           response.data.length == 0 &&
             Alert.alert(
@@ -327,7 +327,7 @@ export default class LeaveRequest extends Component {
       );
     } catch (error) {
       console.log('getSub==', error);
-      this.setState({ CustomListLoader: false });
+      this.setState({CustomListLoader: false});
       alert(error.message);
     }
   };
@@ -366,7 +366,7 @@ export default class LeaveRequest extends Component {
               cancelable: false,
             },
           );
-          this.setState({ LeaveType: '', Active: -1 });
+          this.setState({LeaveType: '', Active: -1});
         }
       },
     );
@@ -429,14 +429,15 @@ export default class LeaveRequest extends Component {
     const fromDate = new Date(this.state.FromDate).toISOString();
     const toDate = new Date(this.state.ToDate).toISOString();
 
-    const url = `${'http://182.71.102.212/palgeoapi/api/Leave/GetDetailedLeaves/'}${fromDate}/${toDate}/${this.state.LeaveType
-      }/${this.state.institute_id}/${this.state.StaffCode}`;
+    const url = `${'http://182.71.102.212/palgeoapi/api/Leave/GetDetailedLeaves/'}${fromDate}/${toDate}/${
+      this.state.LeaveType
+    }/${this.state.institute_id}/${this.state.StaffCode}`;
 
     try {
       const response = await axios.get(url);
       // console.log('GetDetailedLeaves = ', response.data);
       if (response.data.length === 0) {
-        return this.setState({ EmptyMessage: true });
+        return this.setState({EmptyMessage: true});
       }
 
       const tempArr = response.data.map(item => {
@@ -453,23 +454,23 @@ export default class LeaveRequest extends Component {
           isStaffHolidaySecondHalf: item.isStaffHolidaySecondHalf,
         };
       });
-      this.setState({ Loader: false, GetDetailedLeaves: tempArr }, function () {
+      this.setState({Loader: false, GetDetailedLeaves: tempArr}, function () {
         //alert(response.data.message) ;
       });
     } catch (error) {
       //alert('GetDetailedLeaves = ' + error.message);
       console.log(error);
-      return this.setState({ EmptyMessage: true });
+      return this.setState({EmptyMessage: true});
     }
   };
   GetMasterLeaveApproverDetails = async id => {
-    this.setState({ ApproverLoading: true });
+    this.setState({ApproverLoading: true});
     //const url = `http://182.71.102.212/palgeoapi/api/Leave/GetMasterLeaveApproverDetails/${this.state.institute_id}/${this.state.StaffCode}/${this.state.SelectedLeaveId}`;
-    const url = `http://182.71.102.212/palgeoapi/api/Leave/GetMasterLeaveApproverDetailsByMainType/${this.state.institute_id}/${this.state.StaffCode}/${this.state.SelectedLeaveId}`;
+    const url = `${Const}api/Leave/GetMasterLeaveApproverDetailsByMainType/${this.state.institute_id}/${this.state.StaffCode}/${this.state.SelectedLeaveId}`;
     //console.log(url);
     try {
       const response = await axios.get(url);
-      //console.log('response ==>', response.data);
+      console.log('response ==>', response);
       this.setState(
         {
           Loader: false,
@@ -500,13 +501,13 @@ export default class LeaveRequest extends Component {
         },
       );
     } catch (error) {
-      this.setState({ refreshing: false, ApproverLoading: false });
+      this.setState({refreshing: false, ApproverLoading: false});
       alert(error.message);
     }
   };
 
   getmaxAllowedLength = () => {
-    const { LeaveType, SelectedLeaveIdArr } = this.state;
+    const {LeaveType, SelectedLeaveIdArr} = this.state;
     const findLeave = SelectedLeaveIdArr.find(e => e.leaveId === LeaveType);
     //console.log('remaining count ==', findLeave.remainingLeaveCount);
     return findLeave.remainingLeaveCount;
@@ -539,7 +540,7 @@ export default class LeaveRequest extends Component {
       }
     });
     const maxAllowedLength = this.getmaxAllowedLength();
-    const { FinalArr } = this.state;
+    const {FinalArr} = this.state;
     if (maxAllowedLength === 0) {
       if (FinalArr[0].isApprovedLeaveEligible) {
         const allLeavesWithWOffOrHol = this.state.GetDetailedLeaves.filter(
@@ -551,7 +552,7 @@ export default class LeaveRequest extends Component {
         );
         const lengthAll = allLeavesWithWOffOrHol.length;
         if (lengthAll === this.state.GetDetailedLeaves.length) {
-          this.setState({ loader: false });
+          this.setState({loader: false});
           this.displayMsg(
             'You cannot apply leaves as all the dates are either week off or holidays',
             true,
@@ -585,8 +586,8 @@ export default class LeaveRequest extends Component {
           NoOfDays: data.length,
           AlternateStaff: this.state.selectedStaff.length
             ? this.state.allStaffs.find(
-              e => e.id === this.state.selectedStaff[0],
-            ).name
+                e => e.id === this.state.selectedStaff[0],
+              ).name
             : '',
           AlternateStaffReason: this.state.alternateReason,
           //NoOfDays: difference,
@@ -596,8 +597,8 @@ export default class LeaveRequest extends Component {
           IsApprovedLeave: true,
         };
         //console.log(JSON.stringify(bodyData));
-        console.log("********************")
-        console.log(url)
+        console.log('********************');
+        console.log(url);
         console.log(JSON.stringify(bodyData));
         try {
           const response = await axios.post(url, bodyData);
@@ -611,7 +612,7 @@ export default class LeaveRequest extends Component {
               () => {
                 this.displayMsg(
                   response.data.message +
-                  '. Your leave is considered as approved leave',
+                    '. Your leave is considered as approved leave',
                   true,
                   false,
                 );
@@ -622,23 +623,23 @@ export default class LeaveRequest extends Component {
               },
             );
           } else {
-            this.setState({ loader: false });
+            this.setState({loader: false});
             const dates = response.data.overlappingDatesInfo;
             const overflowDates = response.data.occupiedLeaves;
             if (dates?.length > 0) {
-              this.setState({ overlappingDatesInfo: dates }, () => {
-                this.setState({ showModal: true });
+              this.setState({overlappingDatesInfo: dates}, () => {
+                this.setState({showModal: true});
               });
             } else if (overflowDates?.length > 0) {
-              this.setState({ overflowDates }, () => {
-                this.setState({ showModal1: true });
+              this.setState({overflowDates}, () => {
+                this.setState({showModal1: true});
               });
             } else {
               this.displayMsg(response.data.message, true, true);
             }
           }
         } catch (error) {
-          this.setState({ loader: false });
+          this.setState({loader: false});
           this.displayMsg(error.message, true, true);
         }
       }
@@ -654,7 +655,7 @@ export default class LeaveRequest extends Component {
     }
     if (!FinalArr[0].includeLOP) {
       if (length > maxAllowedLength) {
-        this.setState({ loader: false });
+        this.setState({loader: false});
         this.displayMsg(
           'Sorry, you cannot apply leaves more than your allowed limit.',
           true,
@@ -673,7 +674,7 @@ export default class LeaveRequest extends Component {
     );
     const lengthAll = allLeavesWithWOffOrHol.length;
     if (lengthAll === this.state.GetDetailedLeaves.length) {
-      this.setState({ loader: false });
+      this.setState({loader: false});
       this.displayMsg(
         'You cannot apply leaves as all the dates are either week off or holidays',
         true,
@@ -707,7 +708,7 @@ export default class LeaveRequest extends Component {
       NoOfDays: data.length,
       AlternateStaff: this.state.selectedStaff.length
         ? this.state.allStaffs.find(e => e.id === this.state.selectedStaff[0])
-          .name
+            .name
         : '',
       AlternateStaffReason: this.state.alternateReason,
       //NoOfDays: difference,
@@ -715,7 +716,7 @@ export default class LeaveRequest extends Component {
       CreatedDate: new Date().toISOString(),
       ModifiedDate: new Date().toISOString(),
     };
-    console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+    console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&');
     console.log(url);
     console.log(JSON.stringify(bodyData));
 
@@ -734,23 +735,23 @@ export default class LeaveRequest extends Component {
           },
         );
       } else {
-        this.setState({ loader: false });
+        this.setState({loader: false});
         const dates = response.data.overlappingDatesInfo;
         const overflowDates = response.data.occupiedLeaves;
         if (dates?.length > 0) {
-          this.setState({ overlappingDatesInfo: dates }, () => {
-            this.setState({ showModal: true });
+          this.setState({overlappingDatesInfo: dates}, () => {
+            this.setState({showModal: true});
           });
         } else if (overflowDates?.length > 0) {
-          this.setState({ overflowDates }, () => {
-            this.setState({ showModal1: true });
+          this.setState({overflowDates}, () => {
+            this.setState({showModal1: true});
           });
         } else {
           this.displayMsg(response.data.message, true, true);
         }
       }
     } catch (error) {
-      this.setState({ loader: false });
+      this.setState({loader: false});
       this.displayMsg(error.message, true, true);
     }
   };
@@ -777,10 +778,8 @@ export default class LeaveRequest extends Component {
     return diff + 1;
   };
 
-
-
   render() {
-    console.log(this.state.FinalArr)
+    console.log(this.state.FinalArr);
     if (this.state.Loader) {
       return <CustomLoader />;
     }
@@ -799,14 +798,14 @@ export default class LeaveRequest extends Component {
           error={this.state.error}
           subTitle={this.state.msg}
           isVisible={this.state.showAlert}
-          deleteIconPress={() => this.setState({ showAlert: false })}
+          deleteIconPress={() => this.setState({showAlert: false})}
         />
         {this.state.loader && (
           <CustomLoader loaderText={'Trying to raise your request'} />
         )}
         <ScrollView
           nestedScrollEnabled={true}
-          contentContainerStyle={{ paddingBottom: 100 }}>
+          contentContainerStyle={{paddingBottom: 100}}>
           <VStack
 
           //refreshControl={
@@ -826,7 +825,7 @@ export default class LeaveRequest extends Component {
               <CustomModal
                 title={'Overlapping Request Dates'}
                 isVisible={this.state.showModal}
-                deleteIconPress={() => this.setState({ showModal: false })}>
+                deleteIconPress={() => this.setState({showModal: false})}>
                 {this.state.overlappingDatesInfo?.length > 0 &&
                   this.state.overlappingDatesInfo.map((item, i) => {
                     return (
@@ -841,14 +840,14 @@ export default class LeaveRequest extends Component {
                           borderBottomWidth: 1,
                           marginBottom: 5,
                         }}>
-                        <View style={{ width: '40%' }}>
+                        <View style={{width: '40%'}}>
                           <CustomLabel
                             //containerStyle={{width: '40%'}}
                             title={moment(item.date).format('DD.MM.YYYY')}
                           />
                           <CustomLabel title={item.leaveRequestType} />
                         </View>
-                        <View style={{ width: '40%' }}>
+                        <View style={{width: '40%'}}>
                           <CheckBox
                             containerStyle={{
                               padding: 0,
@@ -881,7 +880,7 @@ export default class LeaveRequest extends Component {
               <CustomModal
                 title={'Occupied Request Dates'}
                 isVisible={this.state.showModal1}
-                deleteIconPress={() => this.setState({ showModal1: false })}>
+                deleteIconPress={() => this.setState({showModal1: false})}>
                 {this.state.occupiedDates?.length > 0 &&
                   this.state.occupiedDates.map((item, i) => {
                     return (
@@ -896,13 +895,13 @@ export default class LeaveRequest extends Component {
                           borderBottomWidth: 1,
                           marginBottom: 5,
                         }}>
-                        <View style={{ width: '40%' }}>
+                        <View style={{width: '40%'}}>
                           <CustomLabel
                             //containerStyle={{width: '40%'}}
                             title={moment(item.date).format('DD.MM.YYYY')}
                           />
                         </View>
-                        <View style={{ width: '40%' }}>
+                        <View style={{width: '40%'}}>
                           <CheckBox
                             containerStyle={{
                               padding: 0,
@@ -927,7 +926,7 @@ export default class LeaveRequest extends Component {
                 height={hp('11')}
                 selectedValue={this.state.StaffCode}
                 onValueChange={value =>
-                  this.setState({ StaffCode: value }, () => {
+                  this.setState({StaffCode: value}, () => {
                     //this.GetDetailedLeaves();
                     this.GetLeaveTypeSubCategoriesByInstituteId(
                       this.state.SelectedLeaveId,
@@ -957,36 +956,36 @@ export default class LeaveRequest extends Component {
                 <View
                   style={[
                     styles.headerContainer,
-                    { backgroundColor: '#236DE7' },
+                    {backgroundColor: '#236DE7'},
                   ]}>
                   {/*<View style={[styles.headerTitleContainer, {width: '10%'}]}>
                     <Text style={[styles.text, {color: 'white'}]}>
                       {'SR No.'}
                     </Text>
                   </View>*/}
-                  <View style={[styles.headerTitleContainer, { width: '20%' }]}>
-                    <Text style={[styles.text, { color: 'white' }]}>
+                  <View style={[styles.headerTitleContainer, {width: '20%'}]}>
+                    <Text style={[styles.text, {color: 'white'}]}>
                       {'Eligible Leave'}
                     </Text>
                   </View>
-                  <View style={[styles.headerTitleContainer, { width: '20%' }]}>
-                    <Text style={[styles.text, { color: 'white' }]}>
+                  <View style={[styles.headerTitleContainer, {width: '20%'}]}>
+                    <Text style={[styles.text, {color: 'white'}]}>
                       {'Month/Year'}
                     </Text>
                   </View>
-                  <View style={[styles.headerTitleContainer, { width: '20%' }]}>
+                  <View style={[styles.headerTitleContainer, {width: '20%'}]}>
                     <Text
-                      style={[styles.text, { color: 'white', numberOfLines: 2 }]}>
+                      style={[styles.text, {color: 'white', numberOfLines: 2}]}>
                       {'Remaining Leaves'}
                     </Text>
                   </View>
                   <View
                     style={[
                       styles.headerTitleContainer,
-                      { width: '20%' },
+                      {width: '20%'},
                       //{alignItems: 'flex-end'},
                     ]}>
-                    <Text style={[styles.text, { color: 'white' }]}>
+                    <Text style={[styles.text, {color: 'white'}]}>
                       {'Apply'}
                     </Text>
                   </View>
@@ -1017,7 +1016,7 @@ export default class LeaveRequest extends Component {
                               // {width: '30%'},
                               // {alignItems: 'flex-start', flex: 1},
                             ]}>
-                            <Text style={[styles.text, { color: 'black' }]}>
+                            <Text style={[styles.text, {color: 'black'}]}>
                               {item.leaveName}
                             </Text>
                           </View>
@@ -1027,7 +1026,7 @@ export default class LeaveRequest extends Component {
                               //{flex: 1}
                               // {width: '15%'},
                             ]}>
-                            <Text style={[styles.text, { color: 'red' }]}>
+                            <Text style={[styles.text, {color: 'red'}]}>
                               {item.monthlyLeaves + '/' + item.yearlyLeaves}
                             </Text>
                           </View>
@@ -1037,7 +1036,7 @@ export default class LeaveRequest extends Component {
                               //{flex: 1}
                               // {width: '20%'},
                             ]}>
-                            <Text style={[styles.text, { color: 'red' }]}>
+                            <Text style={[styles.text, {color: 'red'}]}>
                               {item.remainingLeaveCount || ''}
                             </Text>
                           </View>
@@ -1102,13 +1101,13 @@ export default class LeaveRequest extends Component {
                               onPress={() => {
                                 if (this.state.Active == index) {
                                   this.setState(
-                                    { Active: -1, LeaveType: '' },
-                                    function () { },
+                                    {Active: -1, LeaveType: ''},
+                                    function () {},
                                   );
                                 } else {
-                                  this.setState({ Active: index }, function () {
+                                  this.setState({Active: index}, function () {
                                     this.setState(
-                                      { LeaveType: item.leaveId },
+                                      {LeaveType: item.leaveId},
                                       function () {
                                         // console.log(
                                         //   'Selected LeaveType = ',
@@ -1129,7 +1128,7 @@ export default class LeaveRequest extends Component {
                       );
                     })
                   ) : (
-                    <View style={{ marginTop: 10, alignItems: 'center' }}>
+                    <View style={{marginTop: 10, alignItems: 'center'}}>
                       {/* <ActivityIndicator /> */}
                       <Text>No data found</Text>
                     </View>
@@ -1175,13 +1174,13 @@ export default class LeaveRequest extends Component {
                   backgroundColor: 'white',
                   paddingVertical: 10,
                 }}>
-                <View style={{ width: wp('45') }}>
+                <View style={{width: wp('45')}}>
                   <CustomCalendar
                     title={'Starting Date'}
                     AvailableLeaves={this.getAvailableLeaves()}
                     FromDate={this.state.FromDate}
                     date={this.state.FromDate}
-                    onPress={() => this.setState({ dateVisible: true })}
+                    onPress={() => this.setState({dateVisible: true})}
                     isVisible={this.state.dateVisible}
                     onConfirm={date => {
                       this.setState(
@@ -1195,17 +1194,17 @@ export default class LeaveRequest extends Component {
                       );
                     }}
                     //style={{backgroundColor: SubThemeColor}}
-                    textStyle={{ color: ThemeColor }}
-                    onCancel={() => this.setState({ dateVisible: false })}
+                    textStyle={{color: ThemeColor}}
+                    onCancel={() => this.setState({dateVisible: false})}
                   />
                 </View>
-                <View style={{ width: wp('45') }}>
+                <View style={{width: wp('45')}}>
                   <CustomCalendar
                     title={'Ending Date'}
                     date={this.state.ToDate}
                     AvailableLeaves={this.getAvailableLeaves()}
                     FromDate={this.state.FromDate}
-                    onPress={() => this.setState({ dateVisible1: true })}
+                    onPress={() => this.setState({dateVisible1: true})}
                     isVisible={this.state.dateVisible1}
                     onConfirm={date => {
                       this.setState(
@@ -1222,16 +1221,16 @@ export default class LeaveRequest extends Component {
                       );
                     }}
                     //style={{backgroundColor: SubThemeColor}}
-                    textStyle={{ color: ThemeColor }}
-                    onCancel={() => this.setState({ dateVisible1: false })}
+                    textStyle={{color: ThemeColor}}
+                    onCancel={() => this.setState({dateVisible1: false})}
                   />
                 </View>
               </View>
             ) : null}
             {this.state.SelectedDate &&
-              this.state.LeaveType &&
-              this.state.AvailableLeaves != 0 ? (
-              <View style={{ paddingVertical: 10, backgroundColor: 'white' }}>
+            this.state.LeaveType &&
+            this.state.AvailableLeaves != 0 ? (
+              <View style={{paddingVertical: 10, backgroundColor: 'white'}}>
                 <CustomList2
                   width="95%"
                   title1="Date"
@@ -1706,7 +1705,7 @@ export default class LeaveRequest extends Component {
                               },
                             ]}>
                             <View style={[styles.headerTitleContainer]}>
-                              <Text style={[styles.text, { color: 'black' }]}>
+                              <Text style={[styles.text, {color: 'black'}]}>
                                 {/*{moment(item.DatesSelected).format('DD.MM.YYYY')}*/}
                                 {moment(item.DatesSelected).format(
                                   'DD.MM.YYYY',
@@ -1764,12 +1763,12 @@ export default class LeaveRequest extends Component {
               )
               : */}
             {this.state.FinalArr.length > 0 &&
-              this.state.FinalArr[0].isAlternateStaff &&
-              this.state.FinalArr[0].isAlternateStaffSameDepartment ? (
-              <View style={{ marginVertical: 5, backgroundColor: 'white' }}>
+            this.state.FinalArr[0].isAlternateStaff &&
+            this.state.FinalArr[0].isAlternateStaffSameDepartment ? (
+              <View style={{marginVertical: 5, backgroundColor: 'white'}}>
                 <CustomLabel
                   title={'Alternate Staff'}
-                  containerStyle={{ marginLeft: 20 }}
+                  containerStyle={{marginLeft: 20}}
                   size={14}
                 />
                 <CustomSelect
@@ -1789,7 +1788,7 @@ export default class LeaveRequest extends Component {
                           return item.department == value;
                         });
                         //console.log('newStaff = ', newStaff);
-                        this.setState({ staffList: newStaff });
+                        this.setState({staffList: newStaff});
                       },
                     );
                   }}
@@ -1805,7 +1804,7 @@ export default class LeaveRequest extends Component {
                     items={this.state.staffList}
                     onSelectedItemsChange={value => {
                       //console.log('vvv', value);
-                      this.setState({ selectedStaff: value });
+                      this.setState({selectedStaff: value});
                     }}
                     borderColor={'#ccc'}
                     width={'95%'}
@@ -1819,7 +1818,7 @@ export default class LeaveRequest extends Component {
                 <TextArea
                   value={this.state.alternateReason}
                   onChangeText={text => {
-                    this.setState({ alternateReason: text });
+                    this.setState({alternateReason: text});
                   }}
                   h={20}
                   placeholder={
@@ -1833,13 +1832,13 @@ export default class LeaveRequest extends Component {
                   alignSelf="center"
                   marginBottom={10}
                   borderColor={'coolGray.400'}
-                //maxW="300"
+                  //maxW="300"
                 />
               </View>
             ) : null}
             {/* )} */}
 
-            <View style={{ marginTop: 5 }}>
+            <View style={{marginTop: 5}}>
               <CustomTextArea
                 isAttachmentMandatory={
                   this.state.FinalArr.length > 0 &&
@@ -1857,7 +1856,7 @@ export default class LeaveRequest extends Component {
                 }}
                 SelectedImage={Attachment => {
                   //console.log(Attachment);
-                  this.setState({ Attachment });
+                  this.setState({Attachment});
                 }}
                 text={this.state.Attachment.FileName || 'No files attached'}
                 title="Reason For Leave"
@@ -1869,7 +1868,7 @@ export default class LeaveRequest extends Component {
                 value={this.state.Reason}
                 onChangeText={text => {
                   //console.log('reson =', text);
-                  this.setState({ Reason: text });
+                  this.setState({Reason: text});
                 }}
                 onPress={() => {
                   if (this.state.LeaveType == '') {
@@ -1894,14 +1893,12 @@ export default class LeaveRequest extends Component {
                       true,
                       true,
                     );
-                  }
-                  else if (
+                  } else if (
                     this.state.FinalArr[0]?.isAttachmentMandatory &&
                     !this.state.Attachment.FileName
                   ) {
                     this.displayMsg('Attachment is missing.', true, true);
-                  } 
-                  else {
+                  } else {
                     let tempGetDetailedLeaves = this.state.GetDetailedLeaves;
                     let NewLeavesArr = tempGetDetailedLeaves.filter(
                       item =>
@@ -1909,7 +1906,7 @@ export default class LeaveRequest extends Component {
                     );
                     //console.log('NewLeavesArr = ', NewLeavesArr);
                     if (NewLeavesArr.length) {
-                      this.setState({ loader: true });
+                      this.setState({loader: true});
                       this.AddUpdateLeaveRequestNew(NewLeavesArr);
                     } else {
                       this.displayMsg(
@@ -1923,11 +1920,11 @@ export default class LeaveRequest extends Component {
               />
             </View>
 
-            <View style={{ marginVertical: 10 }}>
+            <View style={{marginVertical: 10}}>
               {this.state.ApprovalStages.length > 0 ||
-                !this.state.ApproverLoading ? (
+              !this.state.ApproverLoading ? (
                 <ApprovalStages
-                  onPress={() => { }}
+                  onPress={() => {}}
                   width="100%"
                   title="Approval Stages"
                   color={SubThemeColor}
@@ -1938,7 +1935,7 @@ export default class LeaveRequest extends Component {
               ) : (
                 <View>
                   <ActivityIndicator />
-                  <Text style={{ alignSelf: 'center', marginTop: 10 }}>
+                  <Text style={{alignSelf: 'center', marginTop: 10}}>
                     Fetching Approver List...
                   </Text>
                 </View>
@@ -1989,7 +1986,7 @@ const styles = StyleSheet.create({
     borderColor: '#f1f1f1',
     borderWidth: 0.5,
     shadowColor: 'silver',
-    shadowOffset: { width: 0, height: 0 },
+    shadowOffset: {width: 0, height: 0},
     shadowOpacity: 0.3,
     height: hp('5'),
   },
