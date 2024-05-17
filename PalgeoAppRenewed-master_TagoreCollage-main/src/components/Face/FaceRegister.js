@@ -203,11 +203,15 @@ export default class FaceRegister extends Component {
     uploadData.append('OrganizationId', this.state.org_id);
     uploadData.append('ManagerStaffCode', this.state.manager_staff_id);
     uploadData.append('IsSelf', true);
+    console.log('faceRegister payload', uploadData);
     fetch(Const + 'api/Staff/RegisterPhoto', {
       method: 'POST',
       body: uploadData,
     })
-      .then(response => response.json())
+      .then(response => {
+        console.log('Face Register Response:', response);
+        return response.json();
+      })
       .then(async json => {
         console.log(json);
         if (json.status) {
@@ -220,6 +224,7 @@ export default class FaceRegister extends Component {
             showAlert: false,
             error: false,
           });
+          console.log('uriiiiiii', uri);
           await AsyncStorage.setItem('profile_pic', uri);
           await AsyncStorage.setItem('profileImageFile', uri);
           setTimeout(() => {

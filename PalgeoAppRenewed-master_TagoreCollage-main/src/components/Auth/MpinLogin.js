@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   View,
   Text,
@@ -16,7 +16,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import { Container, VStack, Icon, Input, Item } from 'native-base';
+import {Container, VStack, Icon, Input, Item} from 'native-base';
 import SubHeader from '../common/SubHeader';
 import Loader from '../common/Loader';
 import AwesomeAlert from 'react-native-awesome-alerts';
@@ -24,20 +24,20 @@ import Const from '../common/Constants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
 import Geolocation from 'react-native-geolocation-service';
-import { addBoundaries } from '../../utils/helperFunctions';
+import {addBoundaries} from '../../utils/helperFunctions';
 import PhoneInput from 'react-native-phone-number-input';
 //import googleFit, {Scopes} from 'react-native-google-fit';
-import { Colors } from '../../utils/configs/Colors';
-import { SafeAreaView } from 'react-native';
+import {Colors} from '../../utils/configs/Colors';
+import {SafeAreaView} from 'react-native';
 import CustomLabel from '../common/CustomLabel';
-import { TouchableOpacity } from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import OTPView from '../common/OTPView';
-import { ScrollView } from 'react-native';
+import {ScrollView} from 'react-native';
 import LoginBackGround from '../common/LoginBackGround';
-import { CustomButton } from '../common/CustomButton';
+import {CustomButton} from '../common/CustomButton';
 import SuccessError from '../common/SuccessError';
 import AnimatedLoader from '../common/AnimatedLoader';
-import { getUniqueId } from 'react-native-device-info';
+import {getUniqueId} from 'react-native-device-info';
 
 export default class Login extends Component {
   constructor(props) {
@@ -63,10 +63,10 @@ export default class Login extends Component {
     if (!mobile) return this.props.navigation.navigate('Login');
     const app_state = AppState.currentState;
     const deviceId = getUniqueId();
-    this.setState({ app_status: app_state, deviceId });
+    this.setState({app_status: app_state, deviceId});
     console.log('current appState', this.state.app_status, mobile);
     const device_token = await AsyncStorage.getItem('device_token');
-    this.setState({ mobileNumber: mobile, device_token: device_token });
+    this.setState({mobileNumber: mobile, device_token: device_token});
     BackHandler.addEventListener('hardwareBackPress', this.backButtonPress);
     this.props.navigation.addListener('blur', () => {
       BackHandler.removeEventListener(
@@ -78,7 +78,7 @@ export default class Login extends Component {
       AsyncStorage.getItem('mobile').then(mobile => {
         console.log('[async_mobile]', mobile);
         AsyncStorage.getItem('device_token').then(device_token => {
-          this.setState({ mobileNumber: mobile, device_token: device_token });
+          this.setState({mobileNumber: mobile, device_token: device_token});
         });
       });
     });
@@ -96,9 +96,9 @@ export default class Login extends Component {
     //Geolocation.clearWatch(this.watchID);
   }
   handleLogin = code => {
-    const { deviceId } = this.state;
+    const {deviceId} = this.state;
     if (code) {
-      this.setState({ showAlert: true });
+      this.setState({showAlert: true});
       fetch(Const + 'api/Security/Mobilelogin', {
         method: 'POST',
         headers: {
@@ -112,14 +112,18 @@ export default class Login extends Component {
           // device_token: this.state.device_token,
         }),
       })
-        .then(response => response.json())
+        // .then(response => response.json())
+        .then(response => {
+          console.log('Mpin Login Response:', response);
+          return response.json();
+        })
         .then(async json => {
           console.log('body', {
             mobileNumber: this.state.mobileNumber,
             mpin: code.toString(),
             deviceId,
           });
-          console.log('[LOGIN_JSON => api/Security/Mobilelogin]', json.menus);
+          console.log('[LOGIN_JSON => api/Security/Mobilelogin]', json);
           if (json.isAuthenticated) {
             //await this.setupGoogleFit();
             console.log('face==', json.isFaceAuthenticationRequired);
@@ -152,6 +156,7 @@ export default class Login extends Component {
             //   error_message: 'Logged in successfully',
             //   showAlert: false,
             // });
+            console.log('jsonnnn', json);
             try {
               await AsyncStorage.setItem('app_status', this.state.app_status);
               await AsyncStorage.setItem('user_id', json.staffNumber);
@@ -291,15 +296,17 @@ export default class Login extends Component {
   render() {
     return (
       <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={{ flex: 1 }}
-      >
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={{flex: 1}}>
         <Pressable onPress={() => Keyboard.dismiss()}>
-          <AnimatedLoader doNotShowDeleteIcon isVisible={this.state.showAlert} />
+          <AnimatedLoader
+            doNotShowDeleteIcon
+            isVisible={this.state.showAlert}
+          />
           <SuccessError
             isVisible={this.state.showAlert1}
             error={this.state.error}
-            deleteIconPress={() => this.setState({ showAlert1: false })}
+            deleteIconPress={() => this.setState({showAlert1: false})}
             subTitle={this.state.error_message}
           />
           <LoginBackGround height={'60%'} />
@@ -308,9 +315,8 @@ export default class Login extends Component {
           </View>
 
           <OTPView
-
             onCodeFilled={code => {
-              this.setState({ mpin: code }, () =>
+              this.setState({mpin: code}, () =>
                 this.handleLogin(this.state.mpin),
               );
             }}
@@ -338,12 +344,12 @@ export default class Login extends Component {
               alignItems: 'center',
             }}>
             <CustomLabel
-              labelStyle={{ textAlign: 'center' }}
+              labelStyle={{textAlign: 'center'}}
               title="Do not have an account?"
             />
             <TouchableOpacity onPress={this.registerMpin}>
               <CustomLabel
-                labelStyle={{ textAlign: 'center', color: Colors.button[0] }}
+                labelStyle={{textAlign: 'center', color: Colors.button[0]}}
                 title="Sign up!"
               />
             </TouchableOpacity>

@@ -1,37 +1,37 @@
 import moment from 'moment';
-import { Card } from 'react-native-elements';
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { Calendar } from 'react-native-calendars';
-import { Colors } from '../../utils/configs/Colors';
-import { TabView, SceneMap } from 'react-native-tab-view';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Image } from 'react-native';
-import { ScrollView } from 'react-native';
+import {Card} from 'react-native-elements';
+import React, {Component} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import {Calendar} from 'react-native-calendars';
+import {Colors} from '../../utils/configs/Colors';
+import {TabView, SceneMap} from 'react-native-tab-view';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {Image} from 'react-native';
+import {ScrollView} from 'react-native';
 import Const from '../common/Constants';
 import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from 'react-native-responsive-screen';
-import { TouchableOpacity } from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
-import { Platform } from 'react-native';
-import { ActivityIndicator } from 'react-native';
-import { Dimensions } from 'react-native';
-import { TouchableWithoutFeedback } from 'react-native';
+import {Platform} from 'react-native';
+import {ActivityIndicator} from 'react-native';
+import {Dimensions} from 'react-native';
+import {TouchableWithoutFeedback} from 'react-native';
 import CustomMap from '../common/CustomMap';
-import { Overlay } from 'react-native-elements';
+import {Overlay} from 'react-native-elements';
 import Layout from '../common/Layout';
 import {
   arrayWithoutDuplicates,
   groupByKey,
   showErrorMsg,
 } from '../../utils/helperFunctions';
-import { SafeAreaView } from 'react-native';
+import {SafeAreaView} from 'react-native';
 import SubHeader from '../common/SubHeader';
 import CustomHCard from './CustomHCard';
-import { CustomTabs } from '../common/CustomTabs';
+import {CustomTabs} from '../common/CustomTabs';
 
 export default class Holidays extends Component {
   constructor(props) {
@@ -48,9 +48,9 @@ export default class Holidays extends Component {
       ActiveTab: 'Holidays',
 
       routes: [
-        { key: 'first', title: 'Holidays' },
-        { key: 'second', title: 'Week-Off' },
-        { key: 'third', title: 'Shift' },
+        {key: 'first', title: 'Holidays'},
+        {key: 'second', title: 'Week-Off'},
+        {key: 'third', title: 'Shift'},
       ],
       CurrentMonth: moment(new Date()).format('MM'),
     };
@@ -68,7 +68,7 @@ export default class Holidays extends Component {
       const value = await AsyncStorage.getItem('bearer_token');
       if (value !== null) {
         //alert(value);
-        this.setState({ Token: value }, function () { });
+        this.setState({Token: value}, function () {});
       }
     } catch (error) {
       alert('Error retrieving data');
@@ -76,7 +76,7 @@ export default class Holidays extends Component {
     try {
       const value = await AsyncStorage.getItem('institute_id');
       if (value !== null) {
-        this.setState({ institute_id: value }, function () { });
+        this.setState({institute_id: value}, function () {});
       }
     } catch (error) {
       alert('Error retrieving data');
@@ -85,7 +85,7 @@ export default class Holidays extends Component {
       const value = await AsyncStorage.getItem('user_id');
       if (value !== null) {
         //alert(value);
-        this.setState({ StaffCode: value }, () => {
+        this.setState({StaffCode: value}, () => {
           this.Holidays();
           // this.WeekOff();
           // this.Shifts();
@@ -96,8 +96,7 @@ export default class Holidays extends Component {
     }
   };
   Holidays = async () => {
-    const url =
-      'http://182.71.102.212/palgeoapi/api/Master/GetStaffHolidayMondayDetails';
+    const url = `${Const}api/Master/GetStaffHolidayMondayDetails`;
     console.log('url = ', url);
     let bodyData = {};
     bodyData = {
@@ -107,28 +106,28 @@ export default class Holidays extends Component {
         this.state.CurrentMonth == 1
           ? 'January'
           : this.state.CurrentMonth == 2
-            ? 'February'
-            : this.state.CurrentMonth == 3
-              ? 'March'
-              : this.state.CurrentMonth == 4
-                ? 'April'
-                : this.state.CurrentMonth == 5
-                  ? 'May'
-                  : this.state.CurrentMonth == 6
-                    ? 'June'
-                    : this.state.CurrentMonth == 7
-                      ? 'July'
-                      : this.state.CurrentMonth == 8
-                        ? 'August'
-                        : this.state.CurrentMonth == 9
-                          ? 'September'
-                          : this.state.CurrentMonth == 10
-                            ? 'October'
-                            : this.state.CurrentMonth == 11
-                              ? 'November'
-                              : this.state.CurrentMonth == 12
-                                ? 'December'
-                                : 'December',
+          ? 'February'
+          : this.state.CurrentMonth == 3
+          ? 'March'
+          : this.state.CurrentMonth == 4
+          ? 'April'
+          : this.state.CurrentMonth == 5
+          ? 'May'
+          : this.state.CurrentMonth == 6
+          ? 'June'
+          : this.state.CurrentMonth == 7
+          ? 'July'
+          : this.state.CurrentMonth == 8
+          ? 'August'
+          : this.state.CurrentMonth == 9
+          ? 'September'
+          : this.state.CurrentMonth == 10
+          ? 'October'
+          : this.state.CurrentMonth == 11
+          ? 'November'
+          : this.state.CurrentMonth == 12
+          ? 'December'
+          : 'December',
       //Month: this.state.CurrentMonth.toString(),
     };
     console.log('bodyData = ', bodyData);
@@ -139,11 +138,11 @@ export default class Holidays extends Component {
         data = response.data.sort((e1, e2) => e1.holidayDate >= e2.holidayDate);
       }
       console.log('GetStaffHolidayMondayDetails response - ', data);
-      this.setState({ Holidays: data, HolidayLoader: false }, () => {
+      this.setState({Holidays: data, HolidayLoader: false}, () => {
         //alert(response.data);
       });
     } catch (e) {
-      this.setState({ HolidayLoader: false }, () => {
+      this.setState({HolidayLoader: false}, () => {
         //alert(response.data);
         showErrorMsg(e);
       });
@@ -152,8 +151,7 @@ export default class Holidays extends Component {
     }
   };
   WeekOff = async () => {
-    const url =
-      'http://182.71.102.212/palgeoapi/api/Master/GetAllMandatoryHolidayMonthDetails';
+    const url = `${Const}api/Master/GetAllMandatoryHolidayMonthDetails`;
     //const url = Const + 'api​/Master​/GetAllMandatoryHolidayMonthDetails';
     //console.log('url = ', url);
     let bodyData = {};
@@ -164,28 +162,28 @@ export default class Holidays extends Component {
         this.state.CurrentMonth == 1
           ? 'January'
           : this.state.CurrentMonth == 2
-            ? 'February'
-            : this.state.CurrentMonth == 3
-              ? 'March'
-              : this.state.CurrentMonth == 4
-                ? 'April'
-                : this.state.CurrentMonth == 5
-                  ? 'May'
-                  : this.state.CurrentMonth == 6
-                    ? 'June'
-                    : this.state.CurrentMonth == 7
-                      ? 'July'
-                      : this.state.CurrentMonth == 8
-                        ? 'August'
-                        : this.state.CurrentMonth == 9
-                          ? 'September'
-                          : this.state.CurrentMonth == 10
-                            ? 'October'
-                            : this.state.CurrentMonth == 11
-                              ? 'November'
-                              : this.state.CurrentMonth == 12
-                                ? 'December'
-                                : 'December',
+          ? 'February'
+          : this.state.CurrentMonth == 3
+          ? 'March'
+          : this.state.CurrentMonth == 4
+          ? 'April'
+          : this.state.CurrentMonth == 5
+          ? 'May'
+          : this.state.CurrentMonth == 6
+          ? 'June'
+          : this.state.CurrentMonth == 7
+          ? 'July'
+          : this.state.CurrentMonth == 8
+          ? 'August'
+          : this.state.CurrentMonth == 9
+          ? 'September'
+          : this.state.CurrentMonth == 10
+          ? 'October'
+          : this.state.CurrentMonth == 11
+          ? 'November'
+          : this.state.CurrentMonth == 12
+          ? 'December'
+          : 'December',
       //Month: this.state.CurrentMonth.toString(),
     };
     //console.log('bodyData = ', bodyData);
@@ -195,15 +193,12 @@ export default class Holidays extends Component {
       if (response?.data?.length > 0) {
         data = response.data.sort((e1, e2) => e1.date >= e2.date);
       }
-      console.log(
-        'GetAllMandatoryHolidayMonthDetails response - ',
-        data,
-      );
-      this.setState({ WeekOff: data, WeekOffLoader: false }, () => {
+      console.log('GetAllMandatoryHolidayMonthDetails response - ', data);
+      this.setState({WeekOff: data, WeekOffLoader: false}, () => {
         // console.log(JSON.stringify(response.data, null, 4));
       });
     } catch (e) {
-      this.setState({ WeekOffLoader: false }, () => {
+      this.setState({WeekOffLoader: false}, () => {
         //alert(response.data);
         showErrorMsg(e);
       });
@@ -212,8 +207,7 @@ export default class Holidays extends Component {
     }
   };
   Shifts = async () => {
-    const url =
-      'http://182.71.102.212/palgeoapi/api/GeoFencing/shift/MonthDetails';
+    const url = `${Const}api/GeoFencing/shift/MonthDetails`;
     //console.log('url = ', url);
     let bodyData = {};
     bodyData = {
@@ -223,34 +217,35 @@ export default class Holidays extends Component {
         this.state.CurrentMonth == 1
           ? 'January'
           : this.state.CurrentMonth == 2
-            ? 'February'
-            : this.state.CurrentMonth == 3
-              ? 'March'
-              : this.state.CurrentMonth == 4
-                ? 'April'
-                : this.state.CurrentMonth == 5
-                  ? 'May'
-                  : this.state.CurrentMonth == 6
-                    ? 'June'
-                    : this.state.CurrentMonth == 7
-                      ? 'July'
-                      : this.state.CurrentMonth == 8
-                        ? 'August'
-                        : this.state.CurrentMonth == 9
-                          ? 'September'
-                          : this.state.CurrentMonth == 10
-                            ? 'October'
-                            : this.state.CurrentMonth == 11
-                              ? 'November'
-                              : this.state.CurrentMonth == 12
-                                ? 'December'
-                                : 'December',
+          ? 'February'
+          : this.state.CurrentMonth == 3
+          ? 'March'
+          : this.state.CurrentMonth == 4
+          ? 'April'
+          : this.state.CurrentMonth == 5
+          ? 'May'
+          : this.state.CurrentMonth == 6
+          ? 'June'
+          : this.state.CurrentMonth == 7
+          ? 'July'
+          : this.state.CurrentMonth == 8
+          ? 'August'
+          : this.state.CurrentMonth == 9
+          ? 'September'
+          : this.state.CurrentMonth == 10
+          ? 'October'
+          : this.state.CurrentMonth == 11
+          ? 'November'
+          : this.state.CurrentMonth == 12
+          ? 'December'
+          : 'December',
       //Month: this.state.CurrentMonth.toString(),
     };
-    // console.log('bodyData = ', bodyData);
+    console.log('bodyData = ', bodyData);
     try {
       const response = await axios.post(url, bodyData);
       let data = [];
+      console.log('Response', response);
 
       let uniques = [];
       if (response?.data?.length > 0) {
@@ -264,11 +259,11 @@ export default class Holidays extends Component {
         uniques = arrayWithoutDuplicates(newData, 'date');
       }
 
-      this.setState({ Shifts: uniques, ShiftLoader: false }, () => {
+      this.setState({Shifts: uniques, ShiftLoader: false}, () => {
         // console.log(JSON.stringify(uniques, null, 2));
       });
     } catch (e) {
-      this.setState({ ShiftLoader: false }, () => {
+      this.setState({ShiftLoader: false}, () => {
         showErrorMsg(e);
         //alert(response.data);
       });
@@ -279,7 +274,7 @@ export default class Holidays extends Component {
   renderHolidays = () => {
     return (
       <ScrollView nestedScrollEnabled>
-        <View style={{ width: '100%', minHeight: 200 }}>
+        <View style={{width: '100%', minHeight: 200}}>
           {!this.state.HolidayLoader ? (
             this.state.Holidays.length ? (
               this.state.Holidays.map((item, index) => {
@@ -287,16 +282,16 @@ export default class Holidays extends Component {
                 return (
                   <CustomHCard
                     key={index}
-                    date={moment(item.holidayDate).format("DD-MM-YYYY")}
+                    date={moment(item.holidayDate).format('DD-MM-YYYY')}
                     holidayName={item.description}
                     description={
                       item.isFullDay
                         ? 'Full Day'
                         : item.isEvening
-                          ? 'Half Day : Evening'
-                          : item.isMorning
-                            ? 'Half Day : Morning'
-                            : null
+                        ? 'Half Day : Evening'
+                        : item.isMorning
+                        ? 'Half Day : Morning'
+                        : null
                     }
                   />
                   // <Card
@@ -340,7 +335,7 @@ export default class Holidays extends Component {
                 );
               })
             ) : (
-              <Text style={[styles.ListText, { padding: 10 }]}>
+              <Text style={[styles.ListText, {padding: 10}]}>
                 No Holiday Available
               </Text>
             )
@@ -370,7 +365,7 @@ export default class Holidays extends Component {
   renderWeekOff = () => {
     return (
       <ScrollView nestedScrollEnabled>
-        <View style={{ width: '100%', minHeight: 200 }}>
+        <View style={{width: '100%', minHeight: 200}}>
           {!this.state.WeekOffLoader ? (
             this.state.WeekOff.length ? (
               this.state.WeekOff.map((item, index) => {
@@ -406,7 +401,7 @@ export default class Holidays extends Component {
                 );
               })
             ) : (
-              <Text style={[styles.ListText, { padding: 10 }]}>
+              <Text style={[styles.ListText, {padding: 10}]}>
                 No Week Off Available
               </Text>
             )
@@ -435,7 +430,7 @@ export default class Holidays extends Component {
   };
 
   goToMap = item => {
-    const { coordinates, radius } = item;
+    const {coordinates, radius} = item;
     const parsedCoo = JSON.parse(coordinates);
     const newCoo = parsedCoo.map(e => {
       return {
@@ -468,7 +463,7 @@ export default class Holidays extends Component {
   renderShifts = () => {
     return (
       <ScrollView nestedScrollEnabled>
-        <View style={{ width: '100%', flex: 1 }}>
+        <View style={{width: '100%', flex: 1}}>
           {!this.state.ShiftLoader ? (
             this.state.Shifts.length ? (
               this.state.Shifts.map((itemm, index) => {
@@ -476,7 +471,7 @@ export default class Holidays extends Component {
                 return (
                   <CustomHCard
                     key={index}
-                    date={moment(itemm.date).format("DD-MM-YYYY")}
+                    date={moment(itemm.date).format('DD-MM-YYYY')}
                     noShift={
                       itemm.data.length > 0 &&
                       itemm.data.map((item, i) => {
@@ -491,9 +486,9 @@ export default class Holidays extends Component {
                                 // padding: 10,
                               }}>
                               <View
-                                style={[styles.ListSubView, { width: '90%' }]}>
+                                style={[styles.ListSubView, {width: '90%'}]}>
                                 <Text
-                                  style={[styles.ListText, { color: 'black' }]}>
+                                  style={[styles.ListText, {color: 'black'}]}>
                                   {item.shiftName}
                                   {': ' +
                                     moment
@@ -599,7 +594,7 @@ export default class Holidays extends Component {
                 );
               })
             ) : (
-              <Text style={[styles.ListText, { padding: 10 }]}>
+              <Text style={[styles.ListText, {padding: 10}]}>
                 No Shift Available
               </Text>
             )
@@ -664,12 +659,12 @@ export default class Holidays extends Component {
                 <TouchableOpacity
                   disabled={this.state.CurrentMonth != d.date.month}
                   onPress={() => {
-                    this.setState({ SelectedDay: d.date.dateString });
+                    this.setState({SelectedDay: d.date.dateString});
                   }}
                   style={{
                     backgroundColor:
                       this.state.CurrentMonth == d.date.month &&
-                        this.state.SelectedDay == d.date.dateString
+                      this.state.SelectedDay == d.date.dateString
                         ? Colors.calendarBg
                         : 'transparent',
                     width: 40,
@@ -696,10 +691,10 @@ export default class Holidays extends Component {
                     {d.date.day}
                   </Text>
                   <View
-                    style={{ flexDirection: 'row', justifyContent: 'center' }}>
+                    style={{flexDirection: 'row', justifyContent: 'center'}}>
                     {holidays.includes(JSON.stringify(d.date.day)) &&
                       parseInt(this.state.CurrentMonth) ==
-                      parseInt(d.date.month) && (
+                        parseInt(d.date.month) && (
                         <Image
                           source={require('../../assets/ic_privacy.png')}
                           style={{
@@ -713,7 +708,7 @@ export default class Holidays extends Component {
                       )}
                     {weekoffs.includes(JSON.stringify(d.date.day)) &&
                       parseInt(this.state.CurrentMonth) ==
-                      parseInt(d.date.month) && (
+                        parseInt(d.date.month) && (
                         <Image
                           source={require('../../assets/ic_privacy.png')}
                           style={{
@@ -732,7 +727,7 @@ export default class Holidays extends Component {
             onDayPress={day => {
               //console.log('selected day', day);
               //console.log('selected day', day.dateString);
-              this.setState({ SelectedDay: day.dateString });
+              this.setState({SelectedDay: day.dateString});
             }}
             onMonthChange={month => {
               //console.log('month changed', month);
@@ -776,7 +771,7 @@ export default class Holidays extends Component {
               tab2="Week Off"
               tab3="Shift"
               onPress={value => {
-                this.setState({ ActiveTab: value }, function () {
+                this.setState({ActiveTab: value}, function () {
                   if (this.state.ActiveTab == 'Holidays') {
                     this.Holidays();
                     console.log('Selected tab = ', value);
@@ -838,7 +833,7 @@ export default class Holidays extends Component {
 }
 
 const styles = StyleSheet.create({
-  ListSubView: { width: '45%' },
+  ListSubView: {width: '45%'},
   ListText: {
     fontFamily: 'Poppins-Regular',
     fontSize: 16,

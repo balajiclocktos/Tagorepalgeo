@@ -69,8 +69,8 @@ export class NormalReport extends Component {
           Authorization: 'Bearer ' + bearer_token,
         },
       });
+      console.log('taskssssssssssss', response);
       const {data} = response;
-      console.log('taskssssssssssss', data);
       console.log('payload', body);
       console.log('tasks', data);
       if (data.length === 0) return;
@@ -213,22 +213,43 @@ export class NormalReport extends Component {
         'Content-Type': 'application/json-patch+json',
       },
     })
-      .then(response => response.json())
+      .then(response => {
+        console.log('Response status:', response);
+        return response.json();
+      })
       .then(json => {
-        if (json?.staffReport?.length > 0) {
+        console.log('normalcheckin reportssss', json);
+        console.log(
+          'Request Body:',
+          JSON.stringify({
+            FromDate: from_date,
+            ToDate: to_date,
+            InstituteId: institute_id,
+            StaffCodes: [user_id],
+            IsTravelReport: true,
+            IsMobileApp: true,
+          }),
+        );
+        console.log('normalcheckin reportssss', json.staffReport);
+        if (json?.staffReport?.length >= 1) {
           const report = json.staffReport;
           const dateWiseReport = report.filter(e => e.dateWiseActivities);
           //console.log('dateWiseReport', dateWiseReport);
           const find = dateWiseReport.find((e, i) => i === 0);
           //console.log('find', find);
           const dateWise = find.dateWiseActivities;
-          //console.log('dateWise', dateWise);
+          console.log(
+            'dateWise',
+            dateWise,
+            moment(this.state.date).format('YYYY-MM-DD'),
+          );
 
           const currentDateReport = dateWise.find(
             e =>
               moment(e.captureDate).format('YYYY-MM-DD') ===
               moment(this.state.date).format('YYYY-MM-DD'),
           );
+          console.log('currentdateReport', currentDateReport);
           const activities = currentDateReport?.activities;
           const reverse = activities?.reverse();
           console.log('activities', activities);
